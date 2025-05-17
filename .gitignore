@@ -1,0 +1,13 @@
+# Ignorar dependencias de Node.js (si alguna vez las usas)
+node_modules/
+
+# Ignorar archivos específicos del sistema operativo o editor
+.DS_Store # macOS
+Thumbs.db # Windows
+.vscode/ # Carpeta de configuración de VS Code (opcional)
+
+# Ignorar archivos de build o temporales (si los creas)
+dist/
+build/
+*.log
+.env # Si usas variables de entorno

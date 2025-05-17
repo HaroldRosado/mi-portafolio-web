@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+/* --- Definición de Variables CSS (Custom Properties) --- */
+:root {
+    /* Colores */
+    --color-dark: #333; 
+    --color-medium: #555; 
+    --color-light: #f4f4f4;
+    --color-white: #fff;
+    --color-accent: #007bff;
+    --color-border-light: #ddd;
+    --color-background-category: #e9e9e9;
+    --color-text-muted: #777;
+
+    /* Sombras y Transparencias Comunes */
+    --shadow-color-dark: rgba(0, 0, 0, 0.1);
+    --shadow-color-text: rgba(0, 0, 0, 0.5);
+    --border-color-transparent-light: rgba(255, 255, 255, 0.5);
+    --border-color-transparent-lighter: rgba(255, 255, 255, 0.2);
+    --background-color-transparent-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Permite el desplazamiento suave al hacer clic en enlaces internos --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Estilos generales del cuerpo (body) --- */
+body {
+    font-family: "Roboto Serif", serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* --- Estilos del encabezado (header) --- */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('../images/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    padding: 7rem 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* --- Estilos de la navegación MEJORADA --- */
+header nav {
+    margin-top: 2rem;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Opcional: Añadir un separador entre los enlaces */
+header nav ul li:not(:last-child) a {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    margin-right: -1px;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus { 
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* --- Estilos generales de las secciones --- */
+section {
+    padding: 2rem 1rem;
+    margin: 20px auto;
+    max-width: 960px; 
+    background-color: var(--color-white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+}
+
+section h2 {
+    text-align: center;
+    color: var(--color-medium);
+    margin-top: 0; 
+    margin-bottom: 1.5rem; 
+}
+
+/* --- Estilos específicos de la sección "Acerca de Mí" --- */
+#about_me {
+    text-align: center; 
+}
+
+.about_me {
+    width: 90%;
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 30px; 
+    justify-content: center; 
+    margin: 0 auto;
+}
+
+#about_me img {
+    border-radius: 20px 0;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0; 
+    flex-shrink: 0;
+}
+
+.about_me_text {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+/* --- Estilos específicos de la sección "Proyectos" --- */
+/* Contenedor para cada proyecto individual */
+.project {
+    border: 1px solid var(--color-border-light);
+    padding: 1.5rem;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Contenedor que usa Grid para mostrar los proyectos */
+.projects-grid-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para la imagen del proyecto */
+.project img {
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título del proyecto */
+.project h3 {
+    color: var(--color-dark);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+}
+
+/* Estilos para la descripción del proyecto */
+.project p {
+    margin-bottom: 1rem;
+    color: var(--color-medium);
+    text-align: left;
+}
+
+/* Estilos para los enlaces de Demo/Código */
+.project p a {
+    color: var(--color-accent);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.project p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la línea de tecnologías (opcional) */
+.project .tecnologias {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Contenedor de la lista de habilidades para layout */
+.habilidades-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Estilos para cada bloque de categoría (Lenguajes, Frameworks, etc.) */
+.categoria-habilidad {
+    background-color: var(--color-background-category);
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    text-align: left;
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.categoria-habilidad:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color-dark);
+}
+
+.categoria-habilidad h3 {
+    color: var(--color-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+}
+
+.categoria-habilidad ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categoria-habilidad ul li {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    padding: 0.8rem;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Elimina el margen inferior del último ítem para que no haya espacio extra al final de la lista */
+.categoria-habilidad ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Efecto al pasar el ratón sobre un ítem de habilidad */
+.categoria-habilidad ul li:hover {
+    background-color: var(--color-accent); /* Cambia el fondo al color de acento */
+    border-color: var(--color-accent); /* Cambia el color del borde */
+    color: var(--color-white); /* Cambia el color del texto a blanco para contraste */
+}
+
+/* Asegura que si hay enlaces dentro de los li (menos común en habilidades), cambien de color también */
+.categoria-habilidad ul li:hover a {
+    color: var(--color-white);
+}
+
+/* --- Estilos para la sección "Contacto" --- */
+#contact {
+    text-align: center;
+}
+
+.contacto-enlaces {
+    margin-top: 1.5rem;
+}
+
+.contacto-enlaces p {
+    margin: 0.8rem 0;
+}
+
+.contacto-enlaces a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contacto-enlaces a:hover {
+    text-decoration: underline;
+}
+
+.contacto-enlaces img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* --- Estilos para el Pie de página (Footer) --- */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- Media Query para hacer el menú responsivo (pantallas pequeñas) --- */
+@media (max-width: 768px) {
+
+    header {
+        padding: 2rem 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    /* Elimina el borde separador derecho en pantallas pequeñas */
+    header nav ul li:not(:last-child) a {
+        border-right: none;
+        margin-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header nav ul li a {
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Opcional: Estilo al pasar el ratón/enfocar en móvil (si quieres algo diferente) */
+    header nav ul li a:hover,
+    header nav ul li a:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-me img {
+        margin-bottom: 0;
+    }
+
+    .about-me p {
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
